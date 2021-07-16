@@ -1,15 +1,15 @@
 // Configuration  
 
-const API_URL = "";
+const API_URL = "https://api.themoviedb/3/";
 const API_KEY = process.env.REACT_APP_API_KEY
 
-const SEARCH_BASE_URL = ``
-const POPULAR_BASE_URL = ``
+const SEARCH_BASE_URL = `${API_URL}/search/movie?api_key=${API_KEY}&language=en-US`;
+const POPULAR_BASE_URL = `${API_URL}/search/popular?api_key=${API_KEY}&language=en-US`;
 
 // For Login and Voting
-const REQUEST_TOKEN_URL = ``
-const LOGIN_URL = ``
-const SESSION_ID_URL = ``
+const REQUEST_TOKEN_URL = `${API_URL}/authentication/token/new?api_key=${API_KEY}`;
+const LOGIN_URL = `${API_URL}/authentication/token/validate_with_login/new?api_key=${API_KEY}`
+const SESSION_ID_URL = `${API_URL}/authentication/session/new?api_key=${API_KEY}`
 
 // Image url
 const BASE_IMAGE_URL = `http://image.tmdb.org/t/p/`
@@ -27,5 +27,5 @@ export {
     POPULAR_BASE_URL,
     REQUEST_TOKEN_URL,
     LOGIN_URL,
-    SEARCH_BASE_URL,
+    SESSION_ID_URL,
 }
