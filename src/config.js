@@ -1,7 +1,7 @@
 // Configuration  
 
 const API_URL = "https://api.themoviedb.org/3";
-const API_KEY = process.env.REACT_APP_API_KEY || "41db04c9bb3397465762cd47966fed07";
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 const SEARCH_BASE_URL = `${API_URL}/discover/movie?api_key=${API_KEY}&language=en-US`;
 const POPULAR_BASE_URL = `${API_URL}/discover/popular?api_key=${API_KEY}&language=en-US`;
