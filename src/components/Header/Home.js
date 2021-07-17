@@ -8,6 +8,7 @@ import HeroImage from "../HeroImage";
 import Grid from "../Grid";
 import Thumbnail from "../Thumbnail";
 import Spinner from "../Spinner";
+import SearchBar from "../SearchBar";
 
 //Hook
 import { useHomeFetch } from "../../hooks/useHomeFetch";
@@ -17,8 +18,8 @@ import NoImage from "../../images/nathan-dumlao-qDbnNDF2jZ4-unsplash.jpg";
 
 
 const Home = () => {
-    const { state, loading, error } = useHomeFetch();
-    console.log(state);
+    const { state, loading, error, setSearchItem } = useHomeFetch();
+    // console.log(state);
 
     return (
         <React.Fragment>
@@ -29,6 +30,7 @@ const Home = () => {
                 text={`${state.results[0].overview}`}
             /> 
            ) : null }
+           <SearchBar setSearchItem={setSearchItem} />
            <Grid header="Popular Movies">
                 {state.results.map(movie => (
                     <Thumbnail
