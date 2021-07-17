@@ -2,11 +2,8 @@ import {
     API_KEY,
     API_URL,
     SEARCH_BASE_URL,
-    SEARCH_BASE_URL,
     POPULAR_BASE_URL,
     REQUEST_TOKEN_URL,
-    LOGIN_URL,
-    SEARCH_BASE_URL,
 } from "./config";
 
 
