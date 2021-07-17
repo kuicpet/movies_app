@@ -7,6 +7,7 @@ import { POSTER_SIZE, BACKDROP_SIZE, BASE_IMAGE_URL } from "../../config";
 import HeroImage from "../HeroImage";
 import Grid from "../Grid";
 import Thumbnail from "../Thumbnail";
+import Spinner from "../Spinner";
 
 //Hook
 import { useHomeFetch } from "../../hooks/useHomeFetch";
@@ -40,6 +41,7 @@ const Home = () => {
                     />
                 ))}
            </Grid>
+           <Spinner />
         </React.Fragment>
     )
 };
