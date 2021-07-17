@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 // CONFIG
 import { POSTER_SIZE, BACKDROP_SIZE, BASE_IMAGE_URL } from "../../config";
 // components
-
+import HeroImage from "../HeroImage";
 //Hook
 import { useHomeFetch } from "../../hooks/useHomeFetch";
 // Images
@@ -14,7 +14,17 @@ const Home = () => {
     const { state, loading, error } = useHomeFetch();
     console.log(state);
 
-    return <div>Home Page</div>
+    return (
+        <React.Fragment>
+            {state.results[0] ? (
+            <HeroImage 
+                image={`${BASE_IMAGE_URL}${BACKDROP_SIZE}${state.results[0].backdrop_path}`}
+                title={`${state.results[0].original_title}`}
+                text={`${state.results[0].overview}`}
+            /> 
+           ) : null }
+        </React.Fragment>
+    )
 };
 
 export default Home;

@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
         --darkGray: #1c1c1c;
         --fontXlarge: 2.5rem;
         --fontLarge: 1.5rem;
-        --fontmed: 1.2rem;
+        --fontMed: 1.2rem;
         --fontSmall: 1rem;
     }
     
