@@ -7,7 +7,7 @@ import SearchIcon from "../../images/search.svg";
 import { Wrapper, Content } from "./SearchBar.styles";
 
 const SearchBar = ({ setSearchItem }) => {
-    const [state, setState] = useState("");
+    const [state, setState] = useState(" ");
     const initial = useRef(true);
     
 

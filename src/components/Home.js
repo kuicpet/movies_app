@@ -1,29 +1,32 @@
 import React, { useState, useEffect } from "react";
 
 // CONFIG
-import { POSTER_SIZE, BACKDROP_SIZE, BASE_IMAGE_URL } from "../../config";
+import { POSTER_SIZE, BACKDROP_SIZE, BASE_IMAGE_URL } from "../config";
 
 // components
-import HeroImage from "../HeroImage";
-import Grid from "../Grid";
-import Thumbnail from "../Thumbnail";
-import Spinner from "../Spinner";
-import SearchBar from "../SearchBar";
+import HeroImage from "./HeroImage";
+import Grid from "./Grid";
+import Thumbnail from "./Thumbnail";
+import Spinner from "./Spinner";
+import SearchBar from "./SearchBar";
+import Button from "./Button";
 
 //Hook
-import { useHomeFetch } from "../../hooks/useHomeFetch";
+import { useHomeFetch } from "../hooks/useHomeFetch";
 
 // Images
-import NoImage from "../../images/nathan-dumlao-qDbnNDF2jZ4-unsplash.jpg";
+import NoImage from "../images/nathan-dumlao-qDbnNDF2jZ4-unsplash.jpg";
 
 
 const Home = () => {
-    const { state, loading, error, setSearchItem } = useHomeFetch();
+    const { state, loading, error, setSearchItem, searchItem, setIsLoadingMore } = useHomeFetch();
     // console.log(state);
+
+    if(error) return <div>Something went wrong ...</div>
 
     return (
         <React.Fragment>
-            {state.results[0] ? (
+            {!searchItem &&  state.results[0] ? (
             <HeroImage 
                 image={`${BASE_IMAGE_URL}${BACKDROP_SIZE}${state.results[0].backdrop_path}`}
                 title={`${state.results[0].original_title}`}
@@ -31,7 +34,7 @@ const Home = () => {
             /> 
            ) : null }
            <SearchBar setSearchItem={setSearchItem} />
-           <Grid header="Popular Movies">
+           <Grid header={searchItem ? "Search Results":"Popular Movies"}>
                 {state.results.map(movie => (
                     <Thumbnail
                         key={movie.id}
@@ -43,7 +46,10 @@ const Home = () => {
                     />
                 ))}
            </Grid>
-           <Spinner />
+           {loading && <Spinner />}
+           {state.page < state.total_pages && !loading && (
+               <Button text="Load more" callback={() => setIsLoadingMore(true)} />
+           )}
         </React.Fragment>
     )
 };

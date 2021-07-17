@@ -15,8 +15,6 @@ export const Content = styled.div`
     margin: 0 auto;
 `;
 
-export const Logo = styled.img``;
-
 export const TMDBLogoImg = styled.img`
     width: 200px;
 

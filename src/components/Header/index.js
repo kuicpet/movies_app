@@ -1,7 +1,7 @@
 import React from "react";
 
 import tmdbImg from "../../images/tmdb.svg";
-import { Wrapper, Content, TMDBLogoImg, Logo  } from "./Header.styles";
+import { Wrapper, Content, TMDBLogoImg } from "./Header.styles";
 
 const Header = () => (
     <Wrapper>
