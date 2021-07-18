@@ -44,7 +44,7 @@ const Movie = () => {
                             
                         }
                     />
-                ))}
+                    ))}
            </Grid>
         </React.Fragment>
     )

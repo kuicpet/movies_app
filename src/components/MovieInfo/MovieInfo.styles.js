@@ -38,7 +38,7 @@ export const Text = styled.div`
     color: var(--white);
     overflow: hidden;
 
-    .ratings-directors {
+    .rating-directors {
         display: flex;
         justify-content: flex-start;
     }
@@ -55,11 +55,13 @@ export const Text = styled.div`
         border-radius: 50%;
     }
     .director {
-        margin: 0 0 0 40px;
-    }
-    p {
         margin: 0;
+
+        p {
+        margin: 0;
+        }
     }
+    
     h1 {
         @media screen and (max-width: 768px){
             font-size: var(--fontLarge);
