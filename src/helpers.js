@@ -14,3 +14,10 @@ export const convertMoney = ( money ) => {
     });
     return formatter.format(money);
 }
+
+// session storage
+export const persistedState = stateName => {
+    const sessionState = sessionStorage.getItem(stateName);
+    return sessionState && JSON.parse(stateName);
+
+}
