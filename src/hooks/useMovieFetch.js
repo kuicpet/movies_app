@@ -36,5 +36,5 @@ export const useMovieFetch = movieId => {
         }
         fetchData();
     }, [movieId])
-    return { state, loading, error }
+    return { state , loading, error }
 }
