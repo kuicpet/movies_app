@@ -14,7 +14,7 @@ import {
     },
 };*/
 
-export default {
+const feching = {
     // Fetch Movies
     fetchMovies: async ( searchItem, page ) => {
         const endPoint = searchItem
@@ -38,3 +38,5 @@ export default {
         return reqToken.request_token;
     }
 }
+
+export default feching;
