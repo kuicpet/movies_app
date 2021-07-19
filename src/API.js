@@ -7,12 +7,12 @@ import {
 } from "./config";
 
 
-const defaultConfig = {
+/*const defaultConfig = {
     method: "POST",
     headers: {
         "Content-Type" : "application/json"
     },
-};
+};*/
 
 export default {
     // Fetch Movies
