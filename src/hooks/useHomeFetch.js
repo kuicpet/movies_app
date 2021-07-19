@@ -56,7 +56,7 @@ export const useHomeFetch = () => {
             }
         }*/
 
-        console.log("fetchi ng frm api");
+        console.log("fetching frm api");
         setState(initialState);
         fetchMovies(1, searchItem)
     }, [searchItem])
@@ -71,9 +71,9 @@ export const useHomeFetch = () => {
     }, [isLoadingMore, searchItem, state.page]);
 
     // Save to session storage
-    useEffect(() => {
+    /*useEffect(() => {
        if(!searchItem) sessionStorage.setItem("homeState",  JSON.stringify(state))
-    }, [searchItem, state ]);
+    }, [searchItem, state ]);*/
 
     return { state, loading, error, setSearchItem, searchItem, setIsLoadingMore }
 

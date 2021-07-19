@@ -37,19 +37,19 @@ export const useMovieFetch = movieId => {
             }
         }
 
-        const sessionState = persistedState(movieId);
+        /*const sessionState = persistedState(movieId);
         if(sessionState){
             setState(sessionState);
             setLoading(false);
             return;
-        }
+        }*/
 
         fetchData();
     }, [movieId])
 
     // save to session storage
-    useEffect(() => {
+    /*useEffect(() => {
         sessionStorage.setItem(movieId, JSON.stringify(state))
-    }, [movieId, state])
+    }, [movieId, state])*/
     return { state , loading, error }
 }
