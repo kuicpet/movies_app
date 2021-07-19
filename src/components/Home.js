@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 // CONFIG
 import { POSTER_SIZE, BACKDROP_SIZE, BASE_IMAGE_URL } from "../config";

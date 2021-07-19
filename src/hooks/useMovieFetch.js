@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import API from "../API";
 // helpers
-import { persistedState } from "../helpers";
+//import { persistedState } from "../helpers";
 
 export const useMovieFetch = movieId => {
     const [state, setState] = useState({});
