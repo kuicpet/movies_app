@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 // API
 import API from "../API";
 // sessionStorage
-//import { persistedState } from "../helpers";
+import { persistedState } from "../helpers";
 
 const initialState = {
     page: 0,
@@ -46,7 +46,7 @@ export const useHomeFetch = () => {
     // Initial render and search
     useEffect(() => {
         
-        /*if(!searchItem){
+        if(!searchItem){
             const sessionState = persistedState("homeState");
 
             if(sessionState){
@@ -54,7 +54,7 @@ export const useHomeFetch = () => {
                 setState(sessionState);
                 return;
             }
-        }*/
+        }
 
         console.log("fetching frm api");
         setState(initialState);
@@ -71,9 +71,9 @@ export const useHomeFetch = () => {
     }, [isLoadingMore, searchItem, state.page]);
 
     // Save to session storage
-    /*useEffect(() => {
+    useEffect(() => {
        if(!searchItem) sessionStorage.setItem("homeState",  JSON.stringify(state))
-    }, [searchItem, state ]);*/
+    }, [searchItem, state ]);
 
     return { state, loading, error, setSearchItem, searchItem, setIsLoadingMore }
 
