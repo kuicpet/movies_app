@@ -8,18 +8,24 @@ import Home from './components/Home';
 import Movie from './components/Movie';
 import NotFound from './components/NotFound';
 
+// Context
+import UserProvider from './context';
+
 // Styles
 import { GlobalStyle } from "./GlobalStyles";
 
 const App = () => (
     <Router>
-      <Header />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/:movieId" component={Movie} />
-        <Route path="/*" component={NotFound} />
-      </Switch>
-      <GlobalStyle />
+      <UserProvider>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/:movieId" component={Movie} />
+          <Route path="/*" component={NotFound} />
+        </Switch>
+        <GlobalStyle />
+      </UserProvider>
+     
     </Router>
   );
 
