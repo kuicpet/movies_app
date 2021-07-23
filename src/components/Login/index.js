@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import  { Redirect } from 'react-router-dom';
+import  { useHistory } from 'react-router-dom';
 import API from '../../API';
 // components
 import Button from '../Button';
@@ -10,8 +10,8 @@ import { Context } from '../../context';
 
 const Login = () => {
 
-    const [_user, setUser] = useContext(Context);
-    
+    const [user, setUser] = useContext(Context);
+    const history = useHistory();
 
     const [ username, setUsername ] = useState('');
     const [ password, setPasword ] = useState('');
@@ -30,8 +30,9 @@ const Login = () => {
            });
            console.log(username, password)
            console.log(sessionId);
+           
            setUser({ sessionId: sessionId.session_id, username });
-
+           history.push("/");
        } catch (error) {
            setError(true)
        }

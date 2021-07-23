@@ -1,17 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
+import API from '../../API';
 import PropTypes from "prop-types";
 //components
 import Thumbnail from "../Thumbnail";
+import Rate from "../Rate";
 
 import { BASE_IMAGE_URL, POSTER_SIZE } from "../../config";
 
 import NoImage from "../../images/nathan-dumlao-qDbnNDF2jZ4-unsplash.jpg";
 //styles
 import { Wrapper, Content, Text } from "./MovieInfo.styles";
+// context
+import { Context } from "../../context";
 
-const MovieInfo = ({ movie }) => (
-    
-    <Wrapper backdrop={movie.backdrop_path}>
+
+const MovieInfo = ({ movie }) => {
+    const [user] = useContext(Context);
+
+    const handleRating = async (value) => {
+        const rate = await  API.rateMovie();
+        console.log(rate)
+    }
+   return ( <Wrapper backdrop={movie.backdrop_path}>
         <Content>
             <Thumbnail 
                 image={
@@ -39,11 +49,18 @@ const MovieInfo = ({ movie }) => (
                             ))}
                         </div>
                     </div>
+                    {user && (
+                        <div>
+                        <p>Rate Video</p>
+                        <Rate callback={handleRating}/>
+                    </div>
+                    )}
                 </div>
             </Text>
         </Content>
     </Wrapper>
-);
+   );
+};
 
 MovieInfo.propTypes = {
     movie: PropTypes.object
