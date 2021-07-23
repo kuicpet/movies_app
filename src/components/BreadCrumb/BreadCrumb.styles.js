@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 export const Wrapper = styled.div`
     display: flex;
@@ -8,6 +8,10 @@ export const Wrapper = styled.div`
     height: 70px;
     background: var(--medGray);
     color: var(--white);
+
+    a {
+        text-decoration: none;
+    }
 `;
 
 export const Content = styled.div`

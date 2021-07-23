@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import { BASE_IMAGE_URL, BACKDROP_SIZE } from "../../config";
 
 export const Wrapper = styled.div`
