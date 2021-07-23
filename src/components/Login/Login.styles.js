@@ -17,6 +17,10 @@ export const Wrapper = styled.div`
         border-radius: 20px;
         margin: 10px 0;
         padding: 10px;
+
+        :focus {
+            outline: none;
+        } 
     }
 
     .error {
