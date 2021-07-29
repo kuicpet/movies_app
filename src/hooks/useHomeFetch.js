@@ -26,7 +26,7 @@ export const useHomeFetch = () => {
             setLoading(true);
 
             const movies = await API.fetchMovies(page, searchItem);
-            console.log(movies);
+           // console.log(movies);
 
             setState(prev => ({
                 ...movies,
@@ -50,13 +50,13 @@ export const useHomeFetch = () => {
             const sessionState = persistedState("homeState");
 
             if(sessionState){
-                console.log("fetching from session storage")
+                //console.log("fetching from session storage")
                 setState(sessionState);
                 return;
             }
         }
 
-        console.log("fetching frm api");
+        // console.log("fetching frm api");
         setState(initialState);
         fetchMovies(1, searchItem)
     }, [searchItem])

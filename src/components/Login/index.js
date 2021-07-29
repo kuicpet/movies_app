@@ -10,7 +10,7 @@ import { Context } from '../../context';
 
 const Login = () => {
 
-    const [user, setUser] = useContext(Context);
+    const [_user, setUser] = useContext(Context);
     const history = useHistory();
 
     const [ username, setUsername ] = useState('');
@@ -28,8 +28,8 @@ const Login = () => {
                username,
                password
            });
-           console.log(username, password)
-           console.log(sessionId);
+           //console.log(username, password)
+           //console.log(sessionId);
            
            setUser({ sessionId: sessionId.session_id, username });
            history.push("/");
