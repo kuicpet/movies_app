@@ -35,9 +35,9 @@ const Home = () => {
            ) : null }
            <SearchBar setSearchItem={setSearchItem} />
            <Grid header={searchItem ? "Search Results":"Popular Movies"}>
-                {state.results.map(movie => (
+                {state.results.map((movie,index) => (
                     <Thumbnail
-                        key={movie.id}
+                        key={index}
                         clickable
                         image={
                             movie.poster_path ? BASE_IMAGE_URL + POSTER_SIZE + movie.poster_path : NoImage
