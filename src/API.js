@@ -18,7 +18,7 @@ const defaultConfig = {
 
 const apiSettings = {
     // Fetch Movies
-    fetchMovies: async ( searchItem, page ) => {
+    fetchMovies: async ( page, searchItem) => {
         const endPoint = searchItem
         ? `${SEARCH_BASE_URL}${searchItem}&page=${page}`
         : `${POPULAR_BASE_URL}&page=${page}`;
