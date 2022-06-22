@@ -50,13 +50,13 @@ export const useHomeFetch = () => {
             const sessionState = persistedState("homeState");
 
             if(sessionState){
-                console.log("fetching from session storage")
+                // console.log("fetching from session storage")
                 setState(sessionState);
                 return;
             }
         }
 
-        console.log("fetching frm api");
+        // console.log("fetching frm api");
         setState(initialState);
         fetchMovies(1, searchItem)
     }, [searchItem])
