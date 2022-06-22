@@ -20,7 +20,7 @@ const apiSettings = {
     // Fetch Movies
     fetchMovies: async ( page, searchItem) => {
         const endPoint = searchItem
-        ? `${SEARCH_BASE_URL}${searchItem}&page=${page}`
+        ? `${SEARCH_BASE_URL}&query=${searchItem}&page=${page}`
         : `${POPULAR_BASE_URL}&page=${page}`;
         return await (await fetch(endPoint)).json();
     },
