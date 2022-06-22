@@ -10,7 +10,7 @@ import { Context } from '../../context';
 
 const Login = () => {
 
-    const [_user, setUser] = useContext(Context);
+    const [user, setUser] = useContext(Context);
     const history = useHistory();
 
     const [ username, setUsername ] = useState('');
@@ -25,13 +25,13 @@ const Login = () => {
            const requestToken = await API.getTokenRequest();
            const sessionId = await API.authenticate({
                requestToken,
-               username,
+               user,
                password
            });
            //console.log(username, password)
            //console.log(sessionId);
            
-           setUser({ sessionId: sessionId.session_id, username });
+           setUser({ sessionId: sessionId.session_id, user });
            history.push("/");
        } catch (error) {
            setError(true)
