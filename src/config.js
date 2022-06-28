@@ -1,7 +1,8 @@
 // Configuration  
 
 const API_URL = "https://api.themoviedb.org/3";
-const API_KEY = process.env.REACT_APP_API_KEY;
+const API_KEY = process.env.REACT_APP_API_KEY || '41db04c9bb3397465762cd47966fed07';
+
 
 
 
