@@ -1,6 +1,7 @@
 import styled from "styled-components/macro";
 
 export const Wrapper = styled.div`
+    position: fixed;
     background: linear-gradient(
         to bottom, rgba(0, 0, 0, 0)
         41%, rgba(0, 0, 0, 0.65)

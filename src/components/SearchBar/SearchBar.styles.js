@@ -1,6 +1,8 @@
 import styled from "styled-components/macro";
 
 export const Wrapper = styled.div`
+    position: sticky;
+    top: 0;
     display: flex;
     align-items: center;
     height: 100px;
@@ -10,18 +12,23 @@ export const Wrapper = styled.div`
 
 export const Content = styled.div`
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     max-width: var(--maxWidth);
-    width: 100%;
-    height: 55px;
+    width: 50%;
+    height: 3rem;
     background: var(--medGray);
     margin: 0 auto;
     border-radius: 40px;
     color: var(--white);
-
+    @media screen and (max-width: 800px){
+        width: 90%;
+    }
     img {
         position: absolute;
         left: 15px;
-        top: 14px;
+        top: 10px;
         width: 30px;
     }
 
@@ -40,5 +47,10 @@ export const Content = styled.div`
         :focus {
             outline: none;
         }
+        ::placeholder {
+            color: var(--white)
+            opacity: 1;
+        }
     }
+    
 `;
