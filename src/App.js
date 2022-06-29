@@ -14,6 +14,7 @@ import UserProvider from './context';
 
 // Styles
 import { GlobalStyle } from "./GlobalStyles";
+console.log(process.env.REACT_APP_API_KEY)
 
 const App = () => (
     <Router>
